@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AppLayoutModule } from './layout/app.layout.module';
+import { MovieService } from './services/movie.service';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,7 @@ import { AppLayoutModule } from './layout/app.layout.module';
     AppRoutingModule,
     AppLayoutModule
   ],
-  providers: [],
+  providers: [MovieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
