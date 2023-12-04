@@ -20,7 +20,7 @@ import { ToggleButtonModule } from 'primeng/togglebutton';
 		DropdownModule,
 		RatingModule,
 		ButtonModule,
-		ToggleButtonModule
+		ToggleButtonModule,		
 	],
 	declarations: [MovieDetailsComponent]
 })

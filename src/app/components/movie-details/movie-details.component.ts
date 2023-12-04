@@ -4,6 +4,7 @@ import { SelectItem } from 'primeng/api';
 import { DataView } from 'primeng/dataview';
 import { Movie } from 'src/app/models/movie';
 import { MovieService } from 'src/app/services/movie.service';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 @Component({
     templateUrl: './movie-details.component.html'
@@ -18,16 +19,10 @@ export class MovieDetailsComponent implements OnInit {
 
     sortField: string = '';
 
-    constructor(private movieService: MovieService, private route: ActivatedRoute) { }
+    constructor(private movieService: MovieService, private route: ActivatedRoute, private sanitizer: DomSanitizer) { }
 
     ngOnInit() {
-        // this.route.params.subscribe((params) => {
-        //     this.movie = params['movie']; 
-        //     console.log(this.movie)
-        //   });
         this.movie = history.state.movie;
-        console.log(this.movie)
-
     }
 
     onSortChange(event: any) {
@@ -44,6 +39,10 @@ export class MovieDetailsComponent implements OnInit {
 
     onFilter(dv: DataView, event: Event) {
         dv.filter((event.target as HTMLInputElement).value);
+    }
+
+    getTrailerUrl(): SafeResourceUrl {
+        return this.sanitizer.bypassSecurityTrustResourceUrl(this.movie.trailerLink);
     }
     
 }
