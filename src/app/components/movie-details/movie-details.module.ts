@@ -22,7 +22,7 @@ import { YouTubePlayerModule } from '@angular/youtube-player';
 		RatingModule,
 		ButtonModule,
 		ToggleButtonModule,	
-		YouTubePlayerModule	
+		YouTubePlayerModule
 	],
 	declarations: [MovieDetailsComponent]
 })

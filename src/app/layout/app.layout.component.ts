@@ -57,6 +57,10 @@ export class AppLayoutComponent implements OnDestroy {
             });
     }
 
+    ngOnInit(){
+        this.hideMenu(); 
+    }
+
     hideMenu() {
         this.layoutService.state.overlayMenuActive = false;
         this.layoutService.state.staticMenuMobileActive = false;

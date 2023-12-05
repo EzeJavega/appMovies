@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AppLayoutComponent } from './layout/app.layout.component';
-import { LandingComponent } from './components/landing/landing.component';
-import { MoviesComponent } from './components/movies/movies.component';
 
 const routes: Routes = [
   {
