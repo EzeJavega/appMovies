@@ -2,6 +2,10 @@
 	<div class="col-12">
 		<div class="card">
 			<div id="highlights" class="py-4 px-4 lg:px-8 mx-0 my-6 lg:mx-8">
+				<div class="text-right">
+					<p-toggleButton title="Set Watchlist" [ngModel]="movie.onWatchlist" onLabel="Remove" offLabel="Add" onIcon="pi pi-minus" offIcon="pi pi-plus" [style]="{'width': '7.6em', 'justify-content': 'center'}" (click)="setWatchlist(movie)"></p-toggleButton><br>
+					<!-- [style]="{'width': '7.6em', 'justify-content': 'center'}" -->
+				</div>
 				<div class="text-center">
 					<h1 class="text-900 font-normal mb-2">{{movie.title}}</h1>
 					<span class="text-600 text-2xl">{{movie.releasedDate}}</span>
@@ -69,7 +73,11 @@
 		
 				<div class="grid my-8 pt-2 md:pt-8">
 					<div>
-						<iframe width="560" height="315" src="http://www.youtube.com/watch?v=tg52up16eq0" frameborder="0" allowfullscreen></iframe>
+						<youtube-player [width]="width"
+							[height]="height"
+ 						   videoId="tg52up16eq0" 
+ 						 ></youtube-player>
+						<iframe width="560" height="315" src="https://www.youtube.com/watch?v=tg52up16eq0" frameborder="0" allowfullscreen></iframe>
 					</div>
 				</div>
 			</div>

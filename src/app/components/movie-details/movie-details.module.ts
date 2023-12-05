@@ -9,6 +9,7 @@ import { DropdownModule } from 'primeng/dropdown';
 import { RatingModule } from 'primeng/rating';
 import { ButtonModule } from 'primeng/button';
 import { ToggleButtonModule } from 'primeng/togglebutton';
+import { YouTubePlayerModule } from '@angular/youtube-player';
 
 @NgModule({
 	imports: [
@@ -20,7 +21,8 @@ import { ToggleButtonModule } from 'primeng/togglebutton';
 		DropdownModule,
 		RatingModule,
 		ButtonModule,
-		ToggleButtonModule,		
+		ToggleButtonModule,	
+		YouTubePlayerModule	
 	],
 	declarations: [MovieDetailsComponent]
 })

@@ -19,6 +19,9 @@ export class MovieDetailsComponent implements OnInit {
 
     sortField: string = '';
 
+    width: number = 560;
+    height: number = 315;
+
     constructor(private movieService: MovieService, private route: ActivatedRoute, private sanitizer: DomSanitizer) { }
 
     ngOnInit() {
@@ -45,4 +48,14 @@ export class MovieDetailsComponent implements OnInit {
         return this.sanitizer.bypassSecurityTrustResourceUrl(this.movie.trailerLink);
     }
     
+    setWatchlist(movie: Movie){
+        if(movie.onWatchlist){
+            movie.onWatchlist = false;
+            this.movieService.removeFromWatchlist(movie);
+        }else{
+            movie.onWatchlist = true;
+            this.movieService.addToWatchlist(movie);
+        }
+    }
+
 }

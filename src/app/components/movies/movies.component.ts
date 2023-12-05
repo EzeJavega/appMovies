@@ -24,21 +24,15 @@ export class MoviesComponent implements OnInit {
         this.movieService.getMovies().then(data => this.movies = data);
 
         this.sortOptions = [
-            { label: 'Price High to Low', value: '!price' },
-            { label: 'Price Low to High', value: 'price' }
+            { label: 'By Title', value: 'title' },
+            { label: 'By Release Date', value: 'releasedDate' }
         ];
     }
 
     onSortChange(event: any) {
         const value = event.value;
-
-        if (value.indexOf('!') === 0) {
-            this.sortOrder = -1;
-            this.sortField = value.substring(1, value.length);
-        } else {
-            this.sortOrder = 1;
-            this.sortField = value;
-        }
+        this.sortOrder = 1;
+        this.sortField = value;
     }
 
     onFilter(dv: DataView, event: Event) {
@@ -50,4 +44,13 @@ export class MoviesComponent implements OnInit {
          this.router.navigate(['movies/details'], { state: { movie: movie } });
       }
     
+    setWatchlist(movie: Movie){
+        if(movie.onWatchlist){
+            movie.onWatchlist = false;
+            this.movieService.removeFromWatchlist(movie);
+        }else{
+            movie.onWatchlist = true;
+            this.movieService.addToWatchlist(movie);
+        }
+    }
 }
