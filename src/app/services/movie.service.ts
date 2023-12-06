@@ -1,9 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Movie } from '../models/movie';
-import { Observable } from 'rxjs';
-
-const KEY = 'Watchlist';
 
 @Injectable()
 export class MovieService {
@@ -11,11 +8,18 @@ export class MovieService {
     constructor(private http: HttpClient) { }
 
     getMovies() {
-        window.localStorage.clear();
         return this.http.get<any>('./assets/data/movies.json')
             .toPromise()
             .then(res => res.data as Movie[])
-            .then(data => data);
+            .then(data => {
+                data.forEach(movie => {
+                    if(window.localStorage.getItem('movie'+movie.id)){
+                        movie.onWatchlist = true;
+                        console.log(movie.title);
+                    }
+                });
+                return data;
+              })
     }
 
     addToWatchlist(movie: Movie): void {
@@ -25,9 +29,5 @@ export class MovieService {
     removeFromWatchlist(movie: Movie): void {
         window.localStorage.removeItem('movie'+movie.id);
     }
-    
-    // getWatchlist(): string {
-    //     return localStorage.getItem(KEY);
-    // }
     
 }

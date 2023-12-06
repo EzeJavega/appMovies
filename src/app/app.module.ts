@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AppLayoutModule } from './layout/app.layout.module';
 import { MovieService } from './services/movie.service';
-import { YouTubePlayerModule } from '@angular/youtube-player';
 
 @NgModule({
   declarations: [
@@ -15,7 +14,6 @@ import { YouTubePlayerModule } from '@angular/youtube-player';
     BrowserModule,
     AppRoutingModule,
     AppLayoutModule,
-    YouTubePlayerModule
   ],
   providers: [MovieService],
   bootstrap: [AppComponent]

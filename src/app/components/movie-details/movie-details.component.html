@@ -4,7 +4,6 @@
 			<div id="highlights" class="py-4 px-4 lg:px-8 mx-0 my-6 lg:mx-8">
 				<div class="text-right">
 					<p-toggleButton title="Set Watchlist" [ngModel]="movie.onWatchlist" onLabel="Remove" offLabel="Add" onIcon="pi pi-minus" offIcon="pi pi-plus" [style]="{'width': '7.6em', 'justify-content': 'center'}" (click)="setWatchlist(movie)"></p-toggleButton><br>
-					<!-- [style]="{'width': '7.6em', 'justify-content': 'center'}" -->
 				</div>
 				<div class="text-center">
 					<h1 class="text-900 font-normal mb-2">{{movie.title}}</h1>
@@ -17,7 +16,6 @@
 					</div>
 		
 					<div class="col-12 lg:col-6 my-auto flex flex-column ">
-						<!-- lg:align-items-end text-center lg:text-right -->
 						<div>
 							<div class="flex align-items-center justify-content-center bg-purple-200 align-self-center lg:align-self-end" style="width:4.2rem; height:4.2rem; border-radius: 10px;">
 								<i class="pi pi-fw pi-video text-5xl text-purple-700"></i>
@@ -26,23 +24,18 @@
 							<span class="text-700 text-2xl line-height-3 ml-0 md:ml-2" style="max-width:650px;">{{movie.description}}</span>	
 						</div><br>
 						<div style="display: flex; ">
-							<!-- flex-direction: row-reverse; -->
 							<div class="flex align-items-center justify-content-center bg-yellow-200 align-self-center lg:align-self-center" style="width:4.2rem; height:4.2rem; border-radius: 10px;">
-								<!--  -->
 								<i class="pi pi-fw pi-star text-5xl text-yellow-700"></i>
 							</div>
 							<div>
 								<h2 class="line-height-1 text-900 text-4xl font-normal" style="
 								display: flex;
 							">Rating</h2>
-								<!-- justify-content: center; -->
 								<p-rating [ngModel]="movie.rating" [readonly]="true" [cancel]="false" [stars]="10" styleClass="mb-2"></p-rating>	
 							</div>
 						</div><br>
 						<div style="display: flex; ">
-							<!-- flex-direction: row-reverse; -->
 							<div class="flex align-items-center justify-content-center bg-blue-200 align-self-center lg:align-self-center" style="width:4.2rem; height:4.2rem; border-radius: 10px;">
-								<!--  -->
 								<i class="pi pi-fw pi-stopwatch text-5xl text-blue-700"></i>
 							</div>
 							<div>
@@ -54,16 +47,13 @@
 							</div>
 						</div><br>
 						<div style="display: flex; ">
-							<!-- flex-direction: row-reverse; -->
 							<div class="flex align-items-center justify-content-center bg-green-200 align-self-center lg:align-self-center" style="width:4.2rem; height:4.2rem; border-radius: 10px;">
-								<!--  -->
 								<i class="pi pi-fw pi-desktop text-5xl text-green-700"></i>
 							</div>
 							<div>
 								<h2 class="line-height-1 text-900 text-4xl font-normal" style="
 								display: flex;
 							">Genre</h2>
-								<!-- justify-content: center; -->
 								<span class="text-700 text-2xl line-height-3 ml-0 md:ml-2" style="max-width:650px;">{{movie.genre}}</span>		
 							</div>
 						</div>
@@ -74,53 +64,18 @@
 				<div class="pt-2 md:pt-4">
 					<h2>Trailer</h2>
 					<div *ngIf="movie.id == 1">
-						<!-- <iframe 
-						type="text/html"
-						width="560" 
-						height="315" 
-						src="https://www.youtube.com/embed/LdOM0x0XDMo" 
-						frameborder="0" 
-						></iframe> -->
 						<iframe width="853" height="480" src="https://www.youtube.com/embed/LdOM0x0XDMo" title="TENET - Official Trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 					</div>
 					<div *ngIf="movie.id == 2">
-						<!-- <iframe 
-						type="text/html"
-						width="560" 
-						height="315" 
-						src="https://www.youtube.com/embed/tg52up16eq0" 
-						frameborder="0" 
-						></iframe> -->
 						<iframe width="875" height="366" src="https://www.youtube.com/embed/tg52up16eq0" title="SPIDER-MAN: INTO THE SPIDER-VERSE - Official Trailer #2 (HD)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 					</div>
 					<div *ngIf="movie.id == 3">
-						<!-- <iframe 
-						type="text/html"
-						width="560" 
-						height="315" 
-						src="https://www.youtube.com/embed/qGqiHJTsRkQ" 
-						frameborder="0" 
-						></iframe> -->
 						<iframe width="853" height="480" src="https://www.youtube.com/embed/qGqiHJTsRkQ" title="Knives Out (2019 Movie) Official Trailer — Daniel Craig, Chris Evans, Jamie Lee Curtis" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 					</div>
 					<div *ngIf="movie.id == 4">
-						<!-- <iframe 
-						type="text/html"
-						width="560" 
-						height="315" 
-						src="https://www.youtube.com/embed/d96cjJhvlMA" 
-						frameborder="0" 
-						></iframe> -->
 						<iframe width="875" height="365" src="https://www.youtube.com/embed/d96cjJhvlMA" title="Marvel&#39;s Guardians of the Galaxy - Trailer 1 (OFFICIAL)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 					</div>
 					<div *ngIf="movie.id == 5">
-						<!-- <iframe 
-						type="text/html"
-						width="560" 
-						height="315" 
-						src="https://www.youtube.com/embed/tmeOjFno6Do"
-						frameborder="0" 
-						></iframe> -->
 						<iframe width="875" height="365" src="https://www.youtube.com/embed/tmeOjFno6Do" title="Marvel&#39;s &quot;Avengers: Age of Ultron&quot; - Teaser Trailer (OFFICIAL)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 					</div>
 				</div>

@@ -27,7 +27,6 @@
 							</div>
 							<div class="flex flex-row md:flex-column justify-content-between w-full md:w-auto align-items-center md:align-items-end mt-5 md:mt-0">
 								<span class="text-2xl font-semibold mb-2 align-self-center md:align-self-end">{{movie.duration}}</span><br>
-								<!-- <span [class]="'product-badge status-' + product.inventoryStatus.toLowerCase()">{{product.inventoryStatus}}</span> -->
 								<p-toggleButton title="Set Watchlist" [ngModel]="movie.onWatchlist" onLabel="Remove" offLabel="Add" onIcon="pi pi-minus" offIcon="pi pi-plus" [style]="{'width': '7.6em', 'justify-content': 'center'}" (click)="setWatchlist(movie)"></p-toggleButton><br>
 								<p-button label="View more" (click)="goToDetails(movie)"></p-button>						
 							</div>
@@ -43,7 +42,6 @@
 									<i class="pi pi-video mr-2"></i>
 									<span class="font-semibold">{{movie.genre}}</span>
 								</div>
-								<!-- <span [class]="'product-badge status-' + product.inventoryStatus.toLowerCase()">{{product.inventoryStatus}}</span> -->
 							</div>
 							<div class="flex flex-column align-items-center text-center mb-3">
 								<img [src]="'assets/images/movie' + movie.id + '.png'" [alt]="movie.title" class="w-9 shadow-2 my-3 mx-0"/>
